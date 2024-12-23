@@ -1,86 +1,163 @@
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
+	box-sizing: border-box;
+	font-size: 62.5%;
 }
   *, *:before, *:after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 /**Globales**/
 body{
     background-color: blueviolet;
     font-size: 1.6rem;
-    line-height: 1.5;
+	line-height: 1.5;
 }
 
 p{
-    font-size: 1.8rem;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+	font-size: 1.8rem;
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
 }
 a{
-    text-decoration: none;
-    color: white;
+	text-decoration: none;
+	color: white;
 }
 img{
-    max-width: 12rem;
+	max-width: 100%;
+}
+.header__logo{
+	max-width: 12rem;
 }
 .contenedor{
-    max-width: 120rem;
-    margin: 0 auto;
+	max-width: 120rem;
+	margin: 0 auto;
 }
 h1,h2,h3{
-    text-align: center;
-    color: darkgoldenrod;
-    font-family: sans-serif;
+	text-align: center;
+	color: darkgoldenrod;
+	font-family: sans-serif;
 }
 h1{
-    font-size: 4rem;
+	font-size: 4rem;
 }
 h2{
-    font-size: 3.2rem;
+	font-size: 3.2rem;
 }
 h3{
-    font-size: 2.4rem;
+	font-size: 2.4rem;
 }
 
 /** Header **/
 .header{
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 .header__logo{
-    margin: 3rem 0;
+	margin: 3rem 0;
 }
 
 /** Navegacion **/
 .nav{
-    display: flex;
-    justify-content: center;
-    background-color: rgb(82, 46, 116);
-    padding: 1rem;
-    margin: 0 -0.8rem;
-    gap: 3rem;
+	display: flex;
+	justify-content: center;
+	background-color: rgb(82, 46, 116);
+	padding: 1rem;
+	margin: 0 -0.8rem;
+	gap: 3rem;
 }
 .nav__enlace{
-    font-family:sans-serif;
+	font-family:sans-serif;
 }
 .nav__enlace--principal,
 .nav__enlace:hover{
-    color: darkgoldenrod;
-    animation-delay: 0.5ms;
+	color: darkgoldenrod;
+	animation-delay: 0.5ms;
 }
 
 /** footer**/
 .footer{
-    background-color: rgb(82, 46, 116);
-    margin: 0 -0.8rem;
-    margin-top: 2rem;
-    padding: 1rem;
-    font-size: 2.2rem;
+	background-color: rgb(82, 46, 116);
+	margin: 0 -0.8rem;
+	margin-top: 2rem;
+	padding: 1rem;
+	font-size: 2.2rem;
 }
 .footer__texto{
-    color: white;
-    font-family: sans-serif;
-    text-align: center
+	color: white;
+	font-family: sans-serif;
+	text-align: center
+}
+
+/** Grid **/
+.grid{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	gap: 2rem;
+}
+@media (min-width: 768px){
+	.grid{
+		grid-template-columns: repeat(3,1fr);
+	}
+}
+
+/** Productos **/
+.producto{
+	background-color: rgb(82, 46, 116);
+	padding: 1rem;
+}
+.producto__imagen{
+	width: 100%;
+}
+.producto__nombre{
+	font-size: 4rem;
+}
+.producto__precio{
+	font-size: 2.8rem;
+	color: darkgoldenrod;
+}
+.producto__nombre,
+.producto__precio{
+	font-family: sans-serif;
+	margin: 1rem 0;
+	text-align: center;
+	line-height: 1.2;
+}
+
+/**Graficos**/
+.grafico{
+	min-height: 30rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	grid-column: 1/3;
+}
+.grafico--camisas{
+	grid-row: 2/3;
+	padding: 1rem;
+	background-image: url(resources/grafico1.jpg);
+}
+.grafico--node{
+	grid-row: 8/9;
+	background-image: url(resources/grafico2.jpg);
+}
+@media(min-width:768px){
+	.grafico--node{
+		grid-row: 5/6;
+		grid-column: 2/4;
+		padding: 1rem;
+	}
+}
+
+/**nosotros**/
+.grid__nostros{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	gap: 2rem;
+}
+
+.fotitos{
+	display: grid;
+	border: 0.1rem solid white;
+	border-radius: 1rem;
+	grid-template-columns: repeat(4,1fr);
+	gap: 2rem;
 }
